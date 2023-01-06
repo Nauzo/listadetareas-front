@@ -13,15 +13,20 @@ export class AppComponent {
   title = 'listadetareas-front';
   todoList:any =[] //
   public nombreTarea:string = '';
+  public estaConectado:boolean = false;
   //Constructor para llamar a la Api
   constructor(public api:  ServicioComponentService) { 
   }
 
   //Mostrar el listado de tareas agendadas al iniciar la pagina
   ngOnInit(){
+  
     this.api.getData().subscribe((data)=>{
       this.todoList=data
-    })
+    },
+    error => {
+      this.todoList = null
+    });
   }
   //agregar tarea
   addtarea(valor: string):void{
