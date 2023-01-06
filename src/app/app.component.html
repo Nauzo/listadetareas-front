@@ -1,0 +1,20 @@
+<section class="form-registro">
+  <h3>Agenda de Tareas</h3>
+  <input [(ngModel)]="nombreTarea" class="controls" type="text" name="tareas" id="tareas" placeholder="Ingresar tarea aquí" #valorInput><br>
+  <button (click)="addtarea(valorInput.value);" class="btnAgregar">Agregar Tarea</button>
+  <div>
+    <h3>Tareas Registradas</h3>
+  </div>
+  <div *ngIf="todoList !== null; else elseBlock" class="list-container">
+    <ul *ngFor="let tarea of todoList">
+      <li>
+        {{tarea.body}}
+      </li>
+      <button (click)="actualizarTarea(tarea.id, valorInput.value)" >Editar</button>
+      <button (click)="eliminarTarea(tarea.id);">Eliminar</button>
+    </ul>
+  </div>
+  <ng-template #elseBlock>
+    No se lograron cargar las tareas...
+  </ng-template>
+</section>
