@@ -6,27 +6,20 @@
 
 .form-registro{
     width: 400px;
-    background: #bdc3c7;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #FFFFFF;
     padding: 30px;
     margin: auto;
     margin-top: 100px;
-    border-radius: 4px;
+    border-radius: 8px;
     font-family: "calibri";
     color: rgb(255, 255, 255);
-    box-shadow:  7px 15px 36px #000;
-}
-
-.list-container {
-    background-color: rgb(75, 99, 99);
-    border: #000;
-    border-radius: 4px;
-    box-shadow:  7px 15px 36px #000;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 
 .form-registro{
+    color: #494949;
+    font-family: 'Helvetica';
     font-size: 22px;
     margin-bottom: 20px;
 }
@@ -34,18 +27,9 @@
 .controls {
     width: 100%;
     background: rgb(255, 255, 255);
-    padding: 10px;
     border-radius: 4px;
-    margin-bottom: 12px;
 }
 
-/* .btnAgregar {
-    width: 100%;
-    background-color: rgb(116, 114, 114);
-    border: none;
-    border-radius: 10px;
-    padding: 12px;
-    color: whitesmoke;
-    margin: 12px 0;
-    font-size: 16px;
-} */
+.texto{
+    font-size: 1rem;
+}

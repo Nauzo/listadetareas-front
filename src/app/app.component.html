@@ -1,20 +1,22 @@
 <section class="form-registro">
-  <h3>Agenda de Tareas</h3>
-  <input [(ngModel)]="nombreTarea" class="controls" type="text" name="tareas" id="tareas" placeholder="Ingresar tarea aquí" #valorInput><br>
-  <button (click)="addtarea(valorInput.value);" class="btnAgregar">Agregar Tarea</button>
+  <h4 class="mb-2">Agenda de Tareas</h4>
+  <input [(ngModel)]="nombreTarea" class="controls form-control p-2 mb-3" type="text" name="tareas" id="tareas" placeholder="Ingresar tarea aquí" #valorInput>
+  <button (click)="addtarea(valorInput.value);" class="btnAgregar btn btn-primary p-2">Agregar Tarea</button>
   <div>
-    <h3>Tareas Registradas</h3>
+    <h5 class="my-2">Tareas Registradas</h5>
   </div>
-  <div *ngIf="todoList !== null; else elseBlock" class="list-container">
+  <div *ngIf="todoList !== null; else elseBlock" class="list-container p-3">
     <ul *ngFor="let tarea of todoList">
       <li>
-        {{tarea.body}}
+        <p class="texto p-1">{{tarea.body}}</p>
       </li>
-      <button (click)="actualizarTarea(tarea.id, valorInput.value)" >Editar</button>
-      <button (click)="eliminarTarea(tarea.id);">Eliminar</button>
+      <button class="btn btn-outline-warning p-2 mx-1" (click)="actualizarTarea(tarea.id, valorInput.value)" >Editar</button>
+      <button class="btn btn-outline-danger p-2" (click)="eliminarTarea(tarea.id);">Eliminar</button>
     </ul>
   </div>
   <ng-template #elseBlock>
-    No se lograron cargar las tareas...
+    <div class="alert alert-warning" role="alert">
+      <p class="texto p-1">No se lograron cargar las tareas...</p>
+    </div>
   </ng-template>
 </section>
